@@ -1,0 +1,39 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+class timee{
+   private:
+        int sec,hh,min;
+   public:     
+         void convertion();
+         void gettime();
+         void display();   
+};
+void timee::gettime(){
+   cout<<"\n";
+   cout<<"\tPlease enter the time\t\n"<<endl;
+   cout<<"Hours= "; cin>>hh;
+   cout<<"Minutes= "; cin>>min;
+   cout<<"Seconds= "; cin>>sec;
+};
+void timee::display(){
+   cout<<"\n"<<"The time is : "<<endl;
+   cout<<"Time= "<<setw(2)<<setfill('0')<<hh<<":"<<setw(2)<<setfill('0')<<min<<":"<<setw(2)<<setfill('0')<<sec<<endl;
+
+};
+void timee::convertion(){
+   cout<<"\nTotal time in seconds are: ";
+   int total;
+   total=(hh*3600)+(min*60)+sec;
+   cout<<total;
+   
+  };
+
+main(){
+timee t;
+  cout<<"\t______WELCOME______\n"<<"Here you can convert your time to seconds\t\n";
+  t.gettime();
+  t.display();
+  t.convertion();
+  return 0; 
+}
